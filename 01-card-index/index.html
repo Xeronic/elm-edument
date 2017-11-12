@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+
+  <title>Recipes</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/recipes.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-recipes">
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div id="recipe-search">
+          <input placeholder="search for recipes">
+        </div>
+        <div id="recipe-list">
+          <!-- this recipe card is hard-coded so that you have something to copy -->
+          <!-- you can remove it after you've copied it -->
+          <div class="recipe recipe-card">
+            <a href="recipe.html?id=chicken-tikka-masala">
+              <img src="images/chicken-tikka-masala.jpg">
+              <div class="description">
+                <h2>Chicken Tikka Masala</h2>
+                <p class="lead">Chicken tikka masala is a dish based on chunks of Indian-style roast chicken (Chicken Tikka) cooked in a
+                  tomato/curry sauce, originating in Britain but intentionally recalling Indian dishes.</p>
+                <p class="recipe-rating">
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="recipe recipe-card">
+            <a href="recipe.html?id=chicken-tikka-masala">
+              <img src="images/chicken-tikka-masala.jpg">
+              <div class="description">
+                <h2>Chicken Tikka Masala</h2>
+                <p class="lead">Chicken tikka masala is a dish based on chunks of Indian-style roast chicken (Chicken Tikka) cooked in a
+                  tomato/curry sauce, originating in Britain but intentionally recalling Indian dishes.</p>
+                <p class="recipe-rating">
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="third-party/jquery-3.0.0.min.js"></script>
+<script src="recipe-data/recipes.js"></script>
+<script>
+
+  let $recipeList = $("#recipe-list");
+  let $card = $("<div class='recipe recipe-card'></div>");
+  let $link = $("<a href='recipe.html?id=chicken-tikka-masala'></a>");
+  let $description = $("<div class='description'></div>");
+  let $heading = $("<h2>Chicken Tikka Masala</h2>");
+  let $lead = $("<p class='lead'>Chicken tikka masala is a dish based on chunks of Indian-style roast chicken (Chicken Tikka) cooked in a tomato/curry sauce, originating in Britain but intentionally recalling Indian dishes.</p>");
+  let $recipeRating = $("<p class='recipe-rating'></p>")
+  let $image = $("<img src='images/chicken-tikka-masala.jpg'>");
+  let $star = $("<span class='glyphicon glyphicon-star'></span>");
+  let $emptyStar = $("<span class='glyphicon glyphicon-star-empty'></span>");
+
+  $recipeRating.append($star.clone());
+  $recipeRating.append($star.clone());
+  $recipeRating.append($star.clone());
+  $recipeRating.append($star.clone());
+  $recipeRating.append($emptyStar.clone());
+
+  $description.append($heading, $lead, $recipeRating);
+  $link.append($image, $description);
+  $card.append($link);
+  $recipeList.append($card);
+  /* Step 1. Use jQuery to add a recipe card just below the one already in the recipe list.
+   *         Hardcode all the values; we'll do better in step 2.
+   *
+   * Showing here suggested variable names and the way they need to be appended to each other:
+   *
+   *      #recipe-list
+   *        $recipeCard           (div)
+   *          $link               (a)
+   *            $image            (img)
+   *            $description      (div)
+   *              $heading        (h2)
+   *              $lead           (p)
+   *              $rating         (p)
+   */
+
+  /* Step 2. You can remove the hardcoded recipe from the HTML now. */
+
+  /* Step 3. Now use all the values in the below object instead of hardcoded values.
+   *         (You will need to move the declaration so that it's above your code.)
+   *
+   *  - The `id` property should be used both in the link and the image.
+   *  - The `name` property is for the <h2> heading
+   *  - The `lead` property is -- you guessed it -- for the paragraph with the "lead" class
+   *  - The `rating` is the trickiest; you'll want one `for` loop making filled glyphicon-star,
+   *    and another making glyphicon-star-empty... for a total of 5 stars.
+
+   */
+
+  let recipe = {
+    "id": "chicken-tikka-masala",
+    "name": "Chicken Tikka Masala",
+    "lead": "Chicken tikka masala is a dish based on chunks of Indian-style roast chicken (Chicken Tikka) cooked in a tomato/curry sauce, originating in Britain but intentionally recalling Indian dishes.",
+    "rating": 4,
+  };
+
+    /* Step 4. Finally, put all of your code in a `for (let recipe of recipes) { ... }` -- the
+     *         variable `recipes` has been read in from `recipes.js` above -- and confirm that
+     *         all 7 recipe cards are now shown.
+     */
+</script>
+
+</html>

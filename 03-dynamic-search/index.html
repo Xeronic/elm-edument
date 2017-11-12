@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <title>Recipes</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/recipes.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-recipes">
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div id="recipe-search"><input placeholder="search for recipes"></div>
+          <div id="recipe-list">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="third-party/jquery-3.0.0.min.js"></script>
+  <script src="third-party/handlebars-v4.0.5.js"></script>
+
+  <script src="recipe-data/recipes.js"></script>
+
+  <script id="recipe-list-template" type="text/x-handlebars-template">
+    {{#each recipes}}
+      <div class="recipe recipe-card">
+        <a href="recipe.html?id={{id}}">
+          <img src="images/{{id}}.jpg">
+          <div class="description">
+            <h2>{{name}}</h2>
+            <p class="lead">{{lead}}</p>
+            <p class="recipe-rating">{{#stars rating}}{{/stars}}</p>
+          </div>
+        </a>
+      </div>
+    {{/each}}
+  </script>
+
+  <script>
+    Handlebars.registerHelper("stars", (rating) => {
+      let stars = [0, 1, 2, 3, 4, 5].map((i) => i <= rating
+        ? `<span class="glyphicon glyphicon-star"></span>`
+        : `<span class="glyphicon glyphicon-star-empty"></span>`);
+      return `<p class="recipe-rating">${stars.join("")}</p>`;
+    });
+
+    let source = $("#recipe-list-template").html();
+    let template = Handlebars.compile(source);
+
+    let $recipeList = $("#recipe-list");
+    $recipeList.append($(template({ recipes })));
+
+    /* Step 1. Put the above line, `$recipeList.append(...)` in a function
+     *         `renderRecipeList()`.
+     */
+
+    /* Step 2. Give the function a parameter: `recipes`. (This change is
+     *         so that we can pass in a *filtered* list of recipes in
+     *         subsequent steps.)
+     *
+     *         (Note how we now have two things called `recipes` in our
+     *         code: the global variable `recipes`, and the function
+     *         parameter `recipes`. The latter shadows the former in the
+     *         function.)
+     */
+
+    /* Step 3. Below is a partially completed `render()` function. Change the
+     *         condition `false` to something more sensible: whether the
+     *         `searchText` is part of the *name* of the recipe being looked
+     *         at. (Hint: There's an `.includes` method on strings.)
+     */
+
+    let $searchInput = $("#recipe-search input");
+    function render() {
+      let searchText = $searchInput.val();
+      let filteredRecipes = recipes.filter((recipe) => false);
+      renderRecipeList(filteredRecipes);
+    }
+
+    render();
+
+    /* Step 4. At this point, the recipes should render again, but we still
+     *         haven't plugged in the search input. Make it respond to the
+     *         "keyup" event by calling `render`.
+     *
+     *         (Hint: jQuery's `.on(event, fn)`.)
+     *
+     *         (Hint: Remember to not *call* render, like this: `render()`;
+     *         you'll want to *pass* it, like this: `render`.)
+
+    /* Step 5. Oops! A problem becomes apparent once we've got this far:
+     *         before we re-render, we never *clear* the list of recipes!
+     *         Which means the list only grows, and gets a lot of duplicates.
+     *
+     *         Make sure `renderRecipeList` clears `$recipeList` before
+     *         appending the new list of recipes.
+     *
+     *         (Hint: The jQuery method `.empty()` does this.)
+     */
+
+    /* Step 6. Right now the search is case-sensitive. Make it not care whether
+     *         you search with uppercase or lowercase.
+     *
+     *         (Hint: There's no `.includesCaseInsensitive`, but you can equally
+     *         well convert both `searchText` and `recipe.name` to lowercase,
+     *         using `.toLowerCase()`.)
+     */
+
+    /* Step 7. Improve the search hits by searching not only `recipe.name`, but
+     *         also `recipe.lead` and `recipe.description`. That is, a hit in any
+     *         of these should count as a search hit. (All case-insensitive.)
+     */
+  </script>
+</html>

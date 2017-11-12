@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <title>Recipes</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/icheck-blue.css" rel="stylesheet">
+    <link href="css/recipes.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-recipes">
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div id="recipe-search"><input placeholder="search for recipes"></div>
+          <div id="recipe-list"></div>
+          <div id="recipe"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="third-party/jquery-3.0.0.min.js"></script>
+  <script src="third-party/icheck.js"></script>
+  <script src="third-party/handlebars-v4.0.5.js"></script>
+  <script src="third-party/markdown.min.js"></script>
+  <script src="recipe-data/recipes.js"></script>
+
+  <script id="recipe-list-template" type="text/x-handlebars-template">
+    {{#each recipes}}
+      <div class="recipe recipe-card">
+        <a href="recipe.html?id={{id}}">
+          <img src="images/{{id}}.jpg">
+          <div class="description">
+            <h2>{{name}}</h2>
+            <p class="lead">{{lead}}</p>
+            {{#stars rating}}{{/stars}}
+          </div>
+        </a>
+      </div>
+    {{/each}}
+  </script>
+
+  <script id="recipe-not-found-template" type="text/x-handlebars-template">
+    <div class="recipe">
+      {{#unitSelector}}{{/unitSelector}}
+
+      <div class="row">
+        <div class="col-md-12">
+          <center class="lead apology">Sorry; recipe not found.</center>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script id="recipe-template" type="text/x-handlebars-template">
+    <div class="recipe">
+      {{#unitSelector}}{{/unitSelector}}
+
+      <div class="row">
+        <div class="col-md-12">
+          <img src="images/{{id}}.jpg">
+          <div class="description">
+            <h2>{{name}}</h2>
+            <p class="lead">{{lead}}</p>
+            {{#stars rating}}{{/stars}}
+            <div>
+                Servings:
+                  <!-- 'minus' icon gets added here in step 2 -->
+                  {{servings}}
+                  <!-- 'plus' icon gets added here in step 2 -->
+                  <br>
+                Time: {{time}}<br>
+                Level: {{level}}
+            </div>
+            <h3>Description</h3>
+            {{#markdownToHTML description}}{{/markdownToHTML}}
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5">
+          <div class="recipe-ingredients">
+            <h3>Ingredients</h3>
+            <ul>
+              {{#each ingredients}}
+                <li>{{#ingredient this}}{{/ingredient}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="recipe-procedure">
+            <h3>Procedure</h3>
+            <ol>
+              {{#each procedure}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      {{#if tips}}
+        <div class="row">
+          <div class="col-md-12">
+            <div class="description">
+              <h3>Tips and variations</h3>
+              {{#markdownToHTML tips}}{{/markdownToHTML}}
+            </div>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </script>
+
+  <script>
+    Handlebars.registerHelper("unitSelector", () => {
+        return `
+          <div class="units">
+            Show measurements as
+            <input id="unit-metric" type="radio" name="unit" value="metric" checked>
+            <label for="unit-metric">Metric units</label>
+            <input id="unit-us" type="radio" name="unit" value="us">
+            <label for="unit-us">US units</label>
+          </div>
+        `;
+    });
+
+    Handlebars.registerHelper("stars", (rating) => {
+        let stars = "";
+        for (let i = 0; i < 5; i++) {
+            stars += i <= rating
+                ? `<span class="glyphicon glyphicon-star"></span>`
+                : `<span class="glyphicon glyphicon-star-empty"></span>`;
+        }
+        return `<p class="recipe-rating">${stars}</p>`;
+    });
+
+    Handlebars.registerHelper("ingredient", (ingredient) => {
+        if (typeof ingredient === "string") {
+            return ingredient;
+        }
+        let [qty, unit, desc] = ingredient;
+        return unit === null
+            ? `${qty} ${desc}`
+            : `${qty} ${unit} ${desc}`;
+    });
+
+    Handlebars.registerHelper("markdownToHTML", (markdownInput) => {
+        return markdown.toHTML(markdownInput);
+    });
+
+    let recipeListSource = $("#recipe-list-template").html();
+    let recipeListTemplate = Handlebars.compile(recipeListSource);
+
+    function renderRecipeList(recipes) {
+        let $recipeList = $("#recipe-list");
+        $recipeList.empty().append($(recipeListTemplate({ recipes })));
+    }
+
+    let match = location.search.match(/id=([^&]*)/);
+    let id = match
+        ? match[1]
+        : null;
+    let recipe = recipes.find((r) => r.id === id);
+
+    let recipeSource = recipe
+        ? $("#recipe-template").html()
+        : $("#recipe-not-found-template").html();
+    let recipeTemplate = Handlebars.compile(recipeSource);
+
+    let $recipe = $("#recipe");
+    $recipe.append($(recipeTemplate(recipe)));
+
+    $('input').iCheck({
+        checkboxClass: 'icheckbox_minimal-blue',
+        radioClass: 'iradio_minimal-blue',
+        increaseArea: '20%'
+    });
+
+    let $searchInput = $("#recipe-search input");
+    function render() {
+        let searchText = $searchInput.val().toLowerCase();
+        let filteredRecipes = searchText === ""
+            ? []
+            : recipes.filter((recipe) =>
+                recipe.name.toLowerCase().includes(searchText) ||
+                recipe.lead.toLowerCase().includes(searchText) ||
+                recipe.description.toLowerCase().includes(searchText)
+            );
+        $recipe.toggle(searchText === "");
+        renderRecipeList(filteredRecipes);
+    }
+
+    $searchInput.on("keyup", render);
+    render();
+
+    /* Step 1. Start by taking a look around this file. It's like index.html,
+     *         only more so. There are four Handlebars helpers; find where they
+     *         are being used.
+     *
+     * We're also using a checkbox library to get decent radio buttons. Try switching
+     * off the call `$('input').iCheck(...)` above to see how it looks when the radio
+     * buttons are rendered "natively" by the browser. Notice the difference?
+     */
+
+    /* Step 2. Now add plus and minus icons around the number of servings. They look
+     *         like this:
+     *
+     * <span id="decrement-servings" class="change-servings glyphicon glyphicon-minus"></span>
+     * (number of servings go here, in between)
+     * <span id="increment-servings" class="change-servings glyphicon glyphicon-plus"></span>
+     *
+     * (The ID is there so that we can connect listeners to it. The class
+     * `change-servings` is there for styling, and the other two are for the icons.)
+     */
+
+    /* Step 3. Hook the icons up with behavior. Add something like the following
+     *         code to both buttons. You can put it here at the end of this script:
+     *
+     *     $("#decrement-servings").on("click", () => {
+     *         console.log("decrement servings was clicked");
+     *     });
+     *
+     *     $("#increment-servings").on("click", () => {
+     *         console.log("increment servings was clicked");
+     *     });
+     */
+
+    /* Step 4. Wrap the `$recipe.append($(recipeTemplate(recipe)));` statement in a
+     *         new `renderRecipe` function that takes a `recipe` parameter. Make
+     *         sure to also call this function, so that the recipe renders once.
+     */
+
+    /* Step 5. Now replace the `console.log` behavior of the click listeners with
+     *         some actual logic. Try this:
+     *
+     *     $("#increment-servings").on("click", () => {
+     *         recipe.servings++;
+     *         renderRecipe(recipe);
+     *     });
+     *
+     * Do it for both click listeners. Try it to make sure it works.
+     */
+
+    /* Step 6. Oops! It works, but we need to add `.empty()` to the line that appends
+     *         the recipe template. Do this.
+     */
+
+    /* Step 7. Another thing that breaks is that the radio buttons, since they are
+     *         re-rendered from scratch, lose their nice styling. This will not do.
+     *
+     * Solve that by moving the `$('input').iCheck(...)` call into the `renderRecipe`
+     * function itself, after the template has been inserted.
+     */
+
+    /* Step 8. A *third* embarassing problem is that the increment/decrement icons
+     *         only work once. This is because the event listeners were put on the
+     *         original icon DOM nodes, which were then replaced in the re-render.
+     *
+     * By far the nicest way to solve this is to re-write the listeners like this:
+     *
+     *     $("#recipe").on("click", "#decrement-servings", () => {
+     *         // ...
+     *     });
+     *
+     * The #recipe element will never be replaced in a re-render, and is a good
+     * receiver for the bubbled event.
+     */
+
+    /* Step 9. Also consider whether you would need to bound the number of servings
+     *         below somehow...
+     *
+     * To be more blunt: the decrement button should never let the number of servings
+     * go below 1. ☺
+     */
+
+    /* Step 10. Finish off this exercise by also scaling the numbers in the ingredients.
+     *          If the number of servings has been doubled, then the numbers in the
+     *          ingredients should be doubled too, etc.
+     *
+     * Consider this a stretch task. Here are some hints: you will need one variable
+     * `scalingFactor` which starts out at 1 and which is multiplied with all the
+     * numbers in the ingredients -- and one variable `originalServings` which stores
+     * the original value of `recipe.servings`.
+     *
+     * The click listeners should update `scalingFactor` before re-rendering the recipe:
+     *
+     *     // ...
+     *     scalingFactor = recipe.servings / originalServings;
+     *     renderRecipe(recipe);
+     */
+
+    /* Non-step 11. It should work now. There are a number of things that could be better
+     *              when it comes to the units and the number formatting -- but that's
+     *              the subject of the next exercise.
+     */
+  </script>
+</html>

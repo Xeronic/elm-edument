@@ -1,0 +1,1674 @@
+var _user$project$Main$recipes = {
+	ctor: '::',
+	_0: {
+		id: 'chicken-tikka-masala',
+		name: 'Chicken Tikka Masala',
+		rating: 4,
+		servings: 4,
+		time: '1 hour',
+		level: 'Medium',
+		lead: 'Chicken tikka masala is a dish based on chunks of Indian-style roast chicken (Chicken Tikka) cooked in a tomato/curry sauce, originating in Britain but intentionally recalling Indian dishes.',
+		description: 'There is no standard recipe for chicken tikka masala; a survey found that of 48 different recipes the only common ingredient was chicken. The sauce usually includes tomato and either cream or coconut cream and various spices.',
+		ingredients: {
+			ctor: '::',
+			_0: {
+				ctor: '::',
+				_0: '700',
+				_1: {
+					ctor: '::',
+					_0: 'g',
+					_1: {
+						ctor: '::',
+						_0: 'cooked Chicken Tikka',
+						_1: {ctor: '[]'}
+					}
+				}
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					ctor: '::',
+					_0: '2',
+					_1: {
+						ctor: '::',
+						_0: 'tbsp',
+						_1: {
+							ctor: '::',
+							_0: 'mustard seed oil',
+							_1: {ctor: '[]'}
+						}
+					}
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '::',
+						_0: '4',
+						_1: {
+							ctor: '::',
+							_0: 'large cloves',
+							_1: {
+								ctor: '::',
+								_0: 'of garlic, finely chopped',
+								_1: {ctor: '[]'}
+							}
+						}
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '::',
+							_0: '200',
+							_1: {
+								ctor: '::',
+								_0: 'g',
+								_1: {
+									ctor: '::',
+									_0: 'onions, finely chopped (optional)',
+									_1: {ctor: '[]'}
+								}
+							}
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '::',
+								_0: '1',
+								_1: {
+									ctor: '::',
+									_0: 'can',
+									_1: {
+										ctor: '::',
+										_0: 'of plum tomatoes, chopped',
+										_1: {ctor: '[]'}
+									}
+								}
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '::',
+									_0: '1',
+									_1: {
+										ctor: '::',
+										_0: '',
+										_1: {
+											ctor: '::',
+											_0: 'chopped fresh green chilli',
+											_1: {ctor: '[]'}
+										}
+									}
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '::',
+										_0: '2',
+										_1: {
+											ctor: '::',
+											_0: 'tbsp',
+											_1: {
+												ctor: '::',
+												_0: 'chopped fresh cilantro (coriander leaves)',
+												_1: {ctor: '[]'}
+											}
+										}
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '::',
+											_0: '0.5',
+											_1: {
+												ctor: '::',
+												_0: 'dl',
+												_1: {
+													ctor: '::',
+													_0: 'single cream',
+													_1: {ctor: '[]'}
+												}
+											}
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '::',
+												_0: '1',
+												_1: {
+													ctor: '::',
+													_0: 'tbsp',
+													_1: {
+														ctor: '::',
+														_0: 'malt vinegar',
+														_1: {ctor: '[]'}
+													}
+												}
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '::',
+													_0: '2',
+													_1: {
+														ctor: '::',
+														_0: 'tbsp',
+														_1: {
+															ctor: '::',
+															_0: 'curry paste',
+															_1: {ctor: '[]'}
+														}
+													}
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														ctor: '::',
+														_0: '2',
+														_1: {
+															ctor: '::',
+															_0: 'tbsp',
+															_1: {
+																ctor: '::',
+																_0: 'tandoori masala paste',
+																_1: {ctor: '[]'}
+															}
+														}
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															ctor: '::',
+															_0: '1',
+															_1: {
+																ctor: '::',
+																_0: 'tbsp',
+																_1: {
+																	ctor: '::',
+																	_0: 'tomato paste',
+																	_1: {ctor: '[]'}
+																}
+															}
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																ctor: '::',
+																_0: '1',
+																_1: {
+																	ctor: '::',
+																	_0: 'tbsp',
+																	_1: {
+																		ctor: '::',
+																		_0: 'garam masala',
+																		_1: {ctor: '[]'}
+																	}
+																}
+															},
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		procedure: {
+			ctor: '::',
+			_0: 'Heat the oil in a wok (if available, otherwise a large frying pan).',
+			_1: {
+				ctor: '::',
+				_0: 'Add the garlic and onions (if using) and stir-fry until browned.',
+				_1: {
+					ctor: '::',
+					_0: 'Add the curry pastes and mix well, adding a little water or yogurt.',
+					_1: {
+						ctor: '::',
+						_0: 'Add the cooked chicken tikka and stir-fry for two minutes to heat through.',
+						_1: {
+							ctor: '::',
+							_0: 'Add the tomatoes, vinegar, tomato paste and chillies and simmer for five minutes. Add more water if required.',
+							_1: {
+								ctor: '::',
+								_0: 'Add the cream, garam masala and chopped cilantro and simmer for a few minutes.',
+								_1: {
+									ctor: '::',
+									_0: 'Garnish with fresh coriander and serve with Naan bread, rice coloured yellow with turmeric, onion bahjis and/or a glass of white wine.',
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		tips: '* Mustard seed oil is considered unfit for human consumption in many parts of the world and is therefore not always available. A poor alternative can be made by crackling 0.5 tsp of mustard seeds in approximately 2 tbsp of very hot vegetable or olive oil. Allow to cool then use in place of mustard seed oil.\n* Powdered or dried ingredients can be substituted for fresh ones, but at the expense of taste.'
+	},
+	_1: {
+		ctor: '::',
+		_0: {
+			id: 'french-toast',
+			name: 'French Toast',
+			rating: 3,
+			servings: 1,
+			time: '10 minutes',
+			level: 'Easy',
+			lead: 'French toast is a common breakfast item made by frying a piece of bread soaked in an egg batter.',
+			description: 'French toast was developed as a way to use day-old stale bread. When lacking stale bread, toasting your bread lightly will help it absorb more of the egg and milk batter.\n\nFrench toast is usually served with toppings similar to those used for pancakes, waffles, and toast. Suggested toppings are=\n\n* real maple syrup, table syrup\n\n* jam, jelly, fruit syrup\n\n* whipped cream\n\n* powdered sugar\n\n* nuts\n\n* honey (as served in China)\n\n* bacon\n\n* raspberries and/or strawberries and/or blueberries\n\nIt can also be served as part of a fried breakfast with savory foods like sausages (or vegetarian equivalent), tomato (or ketchup), baked beans, fried mushrooms etc.\n\nThis recipe is easily scalable. The simplest thing to do is to memorize the recipe for two slices (1 serving), and then multiply to make more. You can coat slightly more than one serving with the wet parts of the recipe (2.25 - 2.5 normal-sized slices).',
+			ingredients: {
+				ctor: '::',
+				_0: {
+					ctor: '::',
+					_0: '1',
+					_1: {
+						ctor: '::',
+						_0: '',
+						_1: {
+							ctor: '::',
+							_0: 'egg',
+							_1: {ctor: '[]'}
+						}
+					}
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '::',
+						_0: '0.5',
+						_1: {
+							ctor: '::',
+							_0: 'dl',
+							_1: {
+								ctor: '::',
+								_0: 'milk',
+								_1: {ctor: '[]'}
+							}
+						}
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '::',
+							_0: '2',
+							_1: {
+								ctor: '::',
+								_0: 'slices',
+								_1: {
+									ctor: '::',
+									_0: 'of bread, preferably 2.5 cm slices of French bread',
+									_1: {ctor: '[]'}
+								}
+							}
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '::',
+								_0: 'butter (best), margarine, or cooking oil',
+								_1: {ctor: '[]'}
+							},
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			},
+			procedure: {
+				ctor: '::',
+				_0: 'In a bowl, mix eggs and milk, and optional ingredients.',
+				_1: {
+					ctor: '::',
+					_0: 'Heat up a frying pan, skillet or griddle to medium-low heat.',
+					_1: {
+						ctor: '::',
+						_0: 'Grease the pan with butter, margarine, or cooking spray.',
+						_1: {
+							ctor: '::',
+							_0: 'Soak a slice of bread in the egg-milk mixture and place on pan; repeat until pan is full or desired amount is placed.',
+							_1: {
+								ctor: '::',
+								_0: 'Brown both sides bread.',
+								_1: {
+									ctor: '::',
+									_0: 'Serve on plates, usually two slices per person, with toppings as desired.',
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				}
+			},
+			tips: 'The goal is to get both sides of the French toast nicely browned, while making sure the center is cooked. Using excessive heat could scorch the outside of the toast while leaving the inside undercooked.\n\nAlso, if you are not producing many multiples of the recipe, it is easier to evenly soak each slice of bread in the egg and milk mixture if you make it in small batches, with one egg and 0.5 dl of milk and two slices at a time in one bowl. Then, soak the two slices until almost all of the mixture has been absorbed. If the bowl is small, place the two slices on top of each other, and keep switching and flipping them, so that all four sides will absorb the mixture.\n\nThe cooking process is too short to use most raw spices, but some fresh herbs might be very tasty.\n\nIf using sandwich bread, a plastic sandwich container may be used for the egg-milk mixture. This allows maximum use of the mixture, as the container is a good size and shape.'
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				id: 'hamburger',
+				name: 'Hamburger',
+				rating: 5,
+				servings: 4,
+				time: '20 minutes',
+				level: 'Easy',
+				lead: 'A hamburger is a variant on a sandwich involving a patty of ground meat, usually beef (known in the United Kingdom as a beefburger), or a vegetarian patty.',
+				description: 'A slice of cheese on the patty makes it a cheeseburger, a common variation in the United States.',
+				ingredients: {
+					ctor: '::',
+					_0: {
+						ctor: '::',
+						_0: '500',
+						_1: {
+							ctor: '::',
+							_0: 'g',
+							_1: {
+								ctor: '::',
+								_0: 'minced (ground) beef',
+								_1: {ctor: '[]'}
+							}
+						}
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '::',
+							_0: 'Herbs and spices (optional - see suggestions)',
+							_1: {ctor: '[]'}
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '::',
+								_0: 'Cheese (optional - see suggestions)',
+								_1: {ctor: '[]'}
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '::',
+									_0: 'Salad (lettuce, spinach, alfalfa sprouts, tomato, onion etc. - optional)',
+									_1: {ctor: '[]'}
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '::',
+										_0: '6',
+										_1: {
+											ctor: '::',
+											_0: '',
+											_1: {
+												ctor: '::',
+												_0: 'hamburger buns',
+												_1: {ctor: '[]'}
+											}
+										}
+									},
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				},
+				procedure: {
+					ctor: '::',
+					_0: 'Remove the ground beef from the package and shape by hand into burgers. You should get between 4-6 burgers from 500 g of beef.',
+					_1: {
+						ctor: '::',
+						_0: 'If adding optional ingredients, either season the outside or mix into the beef before forming the patties. Overworking the beef will result in mushy meat that won\'t stick together, so only mix the minimum necessary and do so by hand.',
+						_1: {
+							ctor: '::',
+							_0: 'The burgers can be fried or grilled for about 4-5 mins on each side for burgers which aren\'t too thick.',
+							_1: {
+								ctor: '::',
+								_0: 'Let the burger rest for several minutes before serving to let the juices cool down and not burst out at first bite.',
+								_1: {
+									ctor: '::',
+									_0: 'Ensure your burgers are fully cooked through before serving. If your burgers are quite thick or if you are unsure, you can cut one open to ensure the insides are browned. If the insides are red, there is a chance that the meat is not fully cooked. Alternately, you can insert a meat thermometer into the center of the burger, if the temperature reads less than 70 °C, your burger is undercooked.',
+									_1: {
+										ctor: '::',
+										_0: 'Serve each burger on a bun (sesame seed usually), optionally with relish, sliced pickles, ketchup, mayonnaise, mustard, ranch dressing, cheese, lettuce, tomatoes and/or onions.',
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				},
+				tips: 'Some suggestions of what to add to the meat include= garlic, onion flakes or a small onion, soy sauce, worcestershire sauce, mustard, olive oil, cheese, butter and/or 2 tsp of your favorite hot sauce for some kick. The amounts of herbs and/or spices are up to your local taste and meat quality. Depending on the quality of your local beef, for example, you may wish to add some beef stock to improve the flavour. If you add any liquids, mix the ground beef well then squeeze out the extra juice when forming patties.\n\n* Make sure to let the meat get to room temperature before putting on the grill or in the pan. This will help the burgers cook evenly and fully.\n* You can use almost any type of minced (ground) meat to make hamburgers, including pork, chicken, turkey, lamb, bison, venison, ostrich, or even a meat substitute such as Quorn. Some variations of hamburgers call for mixing different types of meat (e.g. ground beef and ground pork).\n* Do not add salt until right before you put the patty to cook.\n* Mixing ingredients in with the meat is purely optional. You can make a delicious burger by simply shaping patties and seasoning with kosher salt, ground pepper, and if you wish, some garlic powder and/or cayenne.\n* If your burgers fall apart, adding an egg yolk will help keep it together. Buying lean ground beef will also help, although if the meat is too lean the burger may be excessively dry. Not mixing the ground meat in the first place will also ensure the patty\'s integrity.\n* Try adding a pat of butter in the center of each burger for an excellent hamburger.\n* You may wish to experiment with including cheese in the centre of your burger before cooking.\n* Spices which can work well in hamburgers include black pepper, chili (either fresh or powder), Worcestershire Sauce and soy sauce. Experiment to find good combinations.\n* Almost any herb can work, including basil, oregano and parsley.\n* Some other things which are also sometimes added to hamburgers include= diced onions, bread crumbs, crushed saltine crackers.\n* Burgers can also be smoked on a grill. Smoked burgers will appear red and glazed on the outside, but browned on the inside. Smoking a burger before grilling it is an excellent way to seal in the flavorful juices.\n* Adding meat and spices together in a bowl and mixing by hand until the spices are distributed may produce better results. This will also help to stop your burgers from falling apart.\n* Some vegan patties make excellent meat substitutes, especially for Hamburgers, where strong spices make the difference close to indistinguishable.'
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					id: 'pumpkin-pie',
+					name: 'Pumpkin pie',
+					rating: 4,
+					servings: 8,
+					time: '60 minutes + cooling',
+					level: 'Medium',
+					lead: 'Pumpkin pie is a traditional American and Canadian holiday dessert.',
+					description: 'It consists of a pumpkin-based custard baked in a single pie shell. The pie is traditionally served with whipped cream.\n\nUse the smaller \'Sugar Pumpkin\' instead of the big \'Jack O Lantern\' pumpkin. The smaller \'Sugar Pumpkin\' has a firm and smooth texture while the larger \'Jack O Lantern\' pumpkin has more stringy or fibrous texture and more watery for a flesh.',
+					ingredients: {
+						ctor: '::',
+						_0: {
+							ctor: '::',
+							_0: '5',
+							_1: {
+								ctor: '::',
+								_0: 'dl',
+								_1: {
+									ctor: '::',
+									_0: 'milk, scalded',
+									_1: {ctor: '[]'}
+								}
+							}
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '::',
+								_0: '500',
+								_1: {
+									ctor: '::',
+									_0: 'g',
+									_1: {
+										ctor: '::',
+										_0: 'pumpkin, cooked and strained (or plain canned pumpkin)',
+										_1: {ctor: '[]'}
+									}
+								}
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '::',
+									_0: '2.5',
+									_1: {
+										ctor: '::',
+										_0: 'dl',
+										_1: {
+											ctor: '::',
+											_0: 'maple syrup',
+											_1: {ctor: '[]'}
+										}
+									}
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '::',
+										_0: '30',
+										_1: {
+											ctor: '::',
+											_0: 'g',
+											_1: {
+												ctor: '::',
+												_0: 'sugar',
+												_1: {ctor: '[]'}
+											}
+										}
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '::',
+											_0: '1',
+											_1: {
+												ctor: '::',
+												_0: 'tbsp',
+												_1: {
+													ctor: '::',
+													_0: 'flour',
+													_1: {ctor: '[]'}
+												}
+											}
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '::',
+												_0: '1.5',
+												_1: {
+													ctor: '::',
+													_0: 'tsp',
+													_1: {
+														ctor: '::',
+														_0: 'salt',
+														_1: {ctor: '[]'}
+													}
+												}
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '::',
+													_0: '1',
+													_1: {
+														ctor: '::',
+														_0: 'tbsp',
+														_1: {
+															ctor: '::',
+															_0: 'ginger',
+															_1: {ctor: '[]'}
+														}
+													}
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														ctor: '::',
+														_0: '1',
+														_1: {
+															ctor: '::',
+															_0: 'tbsp',
+															_1: {
+																ctor: '::',
+																_0: 'cinnamon',
+																_1: {ctor: '[]'}
+															}
+														}
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															ctor: '::',
+															_0: '1',
+															_1: {
+																ctor: '::',
+																_0: 'tsp',
+																_1: {
+																	ctor: '::',
+																	_0: 'nutmeg (optional)',
+																	_1: {ctor: '[]'}
+																}
+															}
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																ctor: '::',
+																_0: '2',
+																_1: {
+																	ctor: '::',
+																	_0: '',
+																	_1: {
+																		ctor: '::',
+																		_0: 'large eggs, beaten',
+																		_1: {ctor: '[]'}
+																	}
+																}
+															},
+															_1: {
+																ctor: '::',
+																_0: {
+																	ctor: '::',
+																	_0: '1',
+																	_1: {
+																		ctor: '::',
+																		_0: '',
+																		_1: {
+																			ctor: '::',
+																			_0: 'unbaked 23 cm pie shell',
+																			_1: {ctor: '[]'}
+																		}
+																	}
+																},
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					procedure: {
+						ctor: '::',
+						_0: 'Preheat oven to 175 °C.',
+						_1: {
+							ctor: '::',
+							_0: 'Blend all ingredients, except the pie shell, together.',
+							_1: {
+								ctor: '::',
+								_0: 'Pour into the unbaked pie shell.',
+								_1: {
+									ctor: '::',
+									_0: 'Bake at 175 °C for 45 minutes.',
+									_1: {
+										ctor: '::',
+										_0: 'Let cool and serve.',
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					},
+					tips: '* This recipe replaces much of the sugar normally found in a pumpkin pie recipe with maple syrup. Use only real 100 percent maple syrup, not maple-flavored pancake syrup, as their sugar content is different. You can also use brown sugar instead of maple syrup.\n* Prepare the raw pumpkin by skinning and cutting into 2.5 cm cubes. Bake at 175 °C for an hour and then turn off the heat. Leave the pumpkin in the oven for another hour or two, this will reduce the moisture content. The pumpkin may also be steamed but may end up with too much moisture, resulting in a runny pie. A pumpkin 25 cm in diameter will make 4 to 6 pies. The pumpkin may also be baked whole and skinned afterwards.\n* Pumpkin pie has no top crust, which makes most forms of decoration impossible, but for a more aesthetically-pleasing pie, put dollops of real whipped cream on each slice, or add a decorative rim to the side crust with artfully layered dough cut-outs, in the shape of fall leaves, squash or pumpkins.\n* Variant: Chocolate-covered pumpkin pie\n    * After the pie has cooled, melt 50 g of sweetened chocolate (milk or dark) and pour over the top of the pie. Be sure to completely cover the pumpkin. Refrigerate to set the chocolate.\n* Variant: Pumpkin Pasties\n    * Roll pie crust pastry thin and cut into circles approx 10 cm in diameter.\n\nPut a spoonful of the cool pumpkin mixture towards one side of the center of the circle. Fold over the crust into a half-circle and firmly crimp the edges closed. Slice three small slits in the top for venting. Place on a greased cookie sheet. Bake only until crust is a light golden-brown, approx 10 minutes.'
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						id: 'rhubarb-pie',
+						name: 'Rhubarb pie',
+						rating: 5,
+						servings: 8,
+						time: '1 hour 45 minutes',
+						level: 'Medium',
+						lead: 'This pie is fairly sweet, but also quite tangy.',
+						description: 'It is best served warm with a scoop of vanilla ice cream.',
+						ingredients: {
+							ctor: '::',
+							_0: {
+								ctor: '::',
+								_0: '300',
+								_1: {
+									ctor: '::',
+									_0: 'g',
+									_1: {
+										ctor: '::',
+										_0: 'flour',
+										_1: {ctor: '[]'}
+									}
+								}
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '::',
+									_0: '1',
+									_1: {
+										ctor: '::',
+										_0: 'tsp',
+										_1: {
+											ctor: '::',
+											_0: 'salt',
+											_1: {ctor: '[]'}
+										}
+									}
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '::',
+										_0: '1',
+										_1: {
+											ctor: '::',
+											_0: 'tsp',
+											_1: {
+												ctor: '::',
+												_0: 'sugar (optional)',
+												_1: {ctor: '[]'}
+											}
+										}
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '::',
+											_0: '250',
+											_1: {
+												ctor: '::',
+												_0: 'g',
+												_1: {
+													ctor: '::',
+													_0: 'butter, cold',
+													_1: {ctor: '[]'}
+												}
+											}
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '::',
+												_0: '1',
+												_1: {
+													ctor: '::',
+													_0: 'dl',
+													_1: {
+														ctor: '::',
+														_0: 'cold water',
+														_1: {ctor: '[]'}
+													}
+												}
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '::',
+													_0: '1',
+													_1: {
+														ctor: '::',
+														_0: 'kg',
+														_1: {
+															ctor: '::',
+															_0: 'rhubarb stalks',
+															_1: {ctor: '[]'}
+														}
+													}
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														ctor: '::',
+														_0: '3.5',
+														_1: {
+															ctor: '::',
+															_0: 'dl',
+															_1: {
+																ctor: '::',
+																_0: 'sugar',
+																_1: {ctor: '[]'}
+															}
+														}
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															ctor: '::',
+															_0: '0.5',
+															_1: {
+																ctor: '::',
+																_0: 'dl',
+																_1: {
+																	ctor: '::',
+																	_0: 'cornstarch or tapioca pearls',
+																	_1: {ctor: '[]'}
+																}
+															}
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																ctor: '::',
+																_0: '0.5',
+																_1: {
+																	ctor: '::',
+																	_0: 'tsp',
+																	_1: {
+																		ctor: '::',
+																		_0: 'salt',
+																		_1: {ctor: '[]'}
+																	}
+																}
+															},
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						procedure: {
+							ctor: '::',
+							_0: 'Clean and trim the rhubarb stalks.',
+							_1: {
+								ctor: '::',
+								_0: 'Cut the stalks into 1.25 cm to 2.5 cm sections.',
+								_1: {
+									ctor: '::',
+									_0: 'Add sugar, cornstarch or tapioca, and salt.',
+									_1: {
+										ctor: '::',
+										_0: 'Stir until rhubarb is evenly coated with dry ingredients.',
+										_1: {
+											ctor: '::',
+											_0: 'Whisk flour, salt and sugar together in a deep bowl.',
+											_1: {
+												ctor: '::',
+												_0: 'Cut the butter into small pieces and add to the flour mixture.',
+												_1: {
+													ctor: '::',
+													_0: 'Using a pastry blender or two butter knives, cut the butter into the flour until the butter is in small pea-sized pieces.',
+													_1: {
+														ctor: '::',
+														_0: 'Add cold water; cut the water into the flour-butter mixture with the edge of a rubber spatula until it is evenly moistened and will hold together when pressed.',
+														_1: {
+															ctor: '::',
+															_0: 'Form the dough into a ball with your hands, kneading in any loose flour. This should be done as quickly as possible to avoid melting the butter in the dough.',
+															_1: {
+																ctor: '::',
+																_0: 'Chill the dough for 10-20 minutes.',
+																_1: {
+																	ctor: '::',
+																	_0: 'Cut the dough evenly in half.',
+																	_1: {
+																		ctor: '::',
+																		_0: 'On a lightly floured board, roll each half out until it will cover a 20 cm pie dish, with about 2 cm overhang.',
+																		_1: {
+																			ctor: '::',
+																			_0: 'Place pie on lowest rack in oven. Bake for 15 minutes. Reduce oven temperature to 175 °C, and continue baking for 40 to 45 minutes. Serve warm or cold.',
+																			_1: {ctor: '[]'}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						tips: '* If cornstarch is used as the thickener, the pie requires a longer cooling time before the filling is gelled.\n* Another variation is to use a whole egg in the mix.'
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							id: 'spaghetti-alla-carbonara',
+							name: 'Spaghetti alla Carbonara',
+							rating: 4,
+							servings: 6,
+							time: '60 minutes',
+							level: 'Medium',
+							lead: 'Spaghetti alla carbonara is an Italian pasta dish based on eggs, pecorino romano, guanciale and black pepper.',
+							description: 'It was created in the middle of the 20th century.\n\nRecipes vary, though all agree that pecorino romano, eggs, cured fatty pork and black pepper are basic. The pork is fried in fat (olive oil or lard). Then, a mixture of eggs, cheese and olive oil is combined with the hot pasta, thereby cooking the eggs. All of the ingredients are then mixed together. Guanciale is the most traditional bacon for this recipe, but pancetta is a popular substitute. In the US, it is often made with American bacon.\n\nCream is not common in Italian recipes, but is used in the United States, France, the United Kingdom, Australia and Russia (especially in Moscow). Italian Chef Luigi Carnacina used cream in his recipe Other Anglo/Franco variations on carbonara may include peas, broccoli or other vegetables added for colour. Yet another American version includes mushrooms. Many of these preparations have more sauce than the Italian versions.\n\nIn all versions of the recipe, raw eggs are added to the sauce and cook with the heat of the pasta.',
+							ingredients: {
+								ctor: '::',
+								_0: {
+									ctor: '::',
+									_0: '450',
+									_1: {
+										ctor: '::',
+										_0: 'g',
+										_1: {
+											ctor: '::',
+											_0: 'spaghetti',
+											_1: {ctor: '[]'}
+										}
+									}
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '::',
+										_0: '225',
+										_1: {
+											ctor: '::',
+											_0: 'g',
+											_1: {
+												ctor: '::',
+												_0: 'pancetta',
+												_1: {ctor: '[]'}
+											}
+										}
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '::',
+											_0: '5',
+											_1: {
+												ctor: '::',
+												_0: '',
+												_1: {
+													ctor: '::',
+													_0: 'egg yolks',
+													_1: {ctor: '[]'}
+												}
+											}
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '::',
+												_0: '2',
+												_1: {
+													ctor: '::',
+													_0: 'dl',
+													_1: {
+														ctor: '::',
+														_0: 'Pecorino Romano cheese',
+														_1: {ctor: '[]'}
+													}
+												}
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '::',
+													_0: '2',
+													_1: {
+														ctor: '::',
+														_0: 'dl',
+														_1: {
+															ctor: '::',
+															_0: 'Parmigiano-Reggiano cheese',
+															_1: {ctor: '[]'}
+														}
+													}
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														ctor: '::',
+														_0: '4',
+														_1: {
+															ctor: '::',
+															_0: 'tbsp',
+															_1: {
+																ctor: '::',
+																_0: 'olive oil',
+																_1: {ctor: '[]'}
+															}
+														}
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															ctor: '::',
+															_0: '0.5',
+															_1: {
+																ctor: '::',
+																_0: 'tbsp',
+																_1: {
+																	ctor: '::',
+																	_0: 'pepper, freshly ground',
+																	_1: {ctor: '[]'}
+																}
+															}
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																ctor: '::',
+																_0: 'salt',
+																_1: {ctor: '[]'}
+															},
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							},
+							procedure: {
+								ctor: '::',
+								_0: 'Dice the pancetta into 2.5 cm pieces.',
+								_1: {
+									ctor: '::',
+									_0: 'Bring a big pot of water to a boil and add salt to taste when it begins to simmer.',
+									_1: {
+										ctor: '::',
+										_0: 'Cook the spaghetti until it is al dente and drain it, reserving 2.5 dl of water.',
+										_1: {
+											ctor: '::',
+											_0: 'As spaghetti is cooking, heat the olive oil in a large skillet over a medium-high heat. When the oil is hot, add the pancetta and cook for about 10 minutes over a low flame until the pancetta has rendered most of its fat but is still chewy and barely browned.',
+											_1: {
+												ctor: '::',
+												_0: 'In a bowl, slowly whisk about 118 ml of the pasta water into the egg yolks. Add the grated cheese and mix thoroughly with a fork.',
+												_1: {
+													ctor: '::',
+													_0: 'Strain the spaghetti and transfer it immediately to the skillet with the pancetta. Toss it and turn off the heat.',
+													_1: {
+														ctor: '::',
+														_0: 'Add the egg and cheese mixture to the pasta while stirring in the remaining pasta water to help thin the sauce.',
+														_1: {
+															ctor: '::',
+															_0: 'Add the pepper and toss all the ingredients to coat the pasta.',
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							},
+							tips: 'Like most recipes, the origins of the dish are obscure but there are many legends. As \'carbonara\' literally means \'coal miner\'s wife\', some believe that the dish was first made as a hearty meal for Italian coal miners. Others say that it was originally made over charcoal grills, or that it was made with squid ink, giving it the color of coal. It has even been suggested that it was created by, or as a tribute to, the \"charcoalmen\", a secret society prominent in the unification of Italy. Also, the name may be from a Roman restaurant named Carbonara.\n\nThe dish is not present in Ada Boni\'s 1927 classic La Cucina Romana, and is unrecorded before the Second World War. It was first recorded after the war as a Roman dish, when many Italians were eating eggs and bacon supplied by American troops.\n\nIdeally this dish is served with a red wine (Merlot, Chianti, Montepulciano d’Abruzzo), allowed to decant for several hours, and served at 18 °C.'
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								id: 'spaghetti-and-meatballs',
+								name: 'Spaghetti and meatballs',
+								rating: 3,
+								servings: 8,
+								time: '1 hour',
+								level: 'Medium',
+								lead: 'Most food historians agree that the union of spaghetti with meatballs is an American culinary invention with Italian roots.',
+								description: 'In the vast majority of cases, Old World-Italian cuisine calls for mixing heavy meat sauces with fettuccine and tagliatelle but not spaghetti.',
+								ingredients: {
+									ctor: '::',
+									_0: {
+										ctor: '::',
+										_0: '3',
+										_1: {
+											ctor: '::',
+											_0: 'tbsp',
+											_1: {
+												ctor: '::',
+												_0: 'salt',
+												_1: {ctor: '[]'}
+											}
+										}
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '::',
+											_0: '5',
+											_1: {
+												ctor: '::',
+												_0: 'l',
+												_1: {
+													ctor: '::',
+													_0: 'water',
+													_1: {ctor: '[]'}
+												}
+											}
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '::',
+												_0: '500',
+												_1: {
+													ctor: '::',
+													_0: 'g',
+													_1: {
+														ctor: '::',
+														_0: 'dry spaghetti',
+														_1: {ctor: '[]'}
+													}
+												}
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '::',
+													_0: '900',
+													_1: {
+														ctor: '::',
+														_0: 'g',
+														_1: {
+															ctor: '::',
+															_0: 'ground chuck',
+															_1: {ctor: '[]'}
+														}
+													}
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														ctor: '::',
+														_0: '900',
+														_1: {
+															ctor: '::',
+															_0: 'g',
+															_1: {
+																ctor: '::',
+																_0: 'ground pork shoulder',
+																_1: {ctor: '[]'}
+															}
+														}
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															ctor: '::',
+															_0: '350',
+															_1: {
+																ctor: '::',
+																_0: 'g',
+																_1: {
+																	ctor: '::',
+																	_0: 'seasoned bread crumbs',
+																	_1: {ctor: '[]'}
+																}
+															}
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																ctor: '::',
+																_0: '2.5',
+																_1: {
+																	ctor: '::',
+																	_0: 'dl',
+																	_1: {
+																		ctor: '::',
+																		_0: 'grated Parmesan cheese or Romano cheese',
+																		_1: {ctor: '[]'}
+																	}
+																}
+															},
+															_1: {
+																ctor: '::',
+																_0: {
+																	ctor: '::',
+																	_0: '2',
+																	_1: {
+																		ctor: '::',
+																		_0: 'dl',
+																		_1: {
+																			ctor: '::',
+																			_0: 'fresh parsley, minced',
+																			_1: {ctor: '[]'}
+																		}
+																	}
+																},
+																_1: {
+																	ctor: '::',
+																	_0: {
+																		ctor: '::',
+																		_0: '4',
+																		_1: {
+																			ctor: '::',
+																			_0: '',
+																			_1: {
+																				ctor: '::',
+																				_0: 'eggs',
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	},
+																	_1: {
+																		ctor: '::',
+																		_0: {
+																			ctor: '::',
+																			_0: '1.5',
+																			_1: {
+																				ctor: '::',
+																				_0: 'tbsp',
+																				_1: {
+																					ctor: '::',
+																					_0: 'finely minced garlic',
+																					_1: {ctor: '[]'}
+																				}
+																			}
+																		},
+																		_1: {
+																			ctor: '::',
+																			_0: {
+																				ctor: '::',
+																				_0: '0.5',
+																				_1: {
+																					ctor: '::',
+																					_0: 'tsp',
+																					_1: {
+																						ctor: '::',
+																						_0: 'garlic powder',
+																						_1: {ctor: '[]'}
+																					}
+																				}
+																			},
+																			_1: {
+																				ctor: '::',
+																				_0: {
+																					ctor: '::',
+																					_0: '0.5',
+																					_1: {
+																						ctor: '::',
+																						_0: 'tsp',
+																						_1: {
+																							ctor: '::',
+																							_0: 'onion powder',
+																							_1: {ctor: '[]'}
+																						}
+																					}
+																				},
+																				_1: {
+																					ctor: '::',
+																					_0: {
+																						ctor: '::',
+																						_0: '0.5',
+																						_1: {
+																							ctor: '::',
+																							_0: 'tsp',
+																							_1: {
+																								ctor: '::',
+																								_0: 'black pepper',
+																								_1: {ctor: '[]'}
+																							}
+																						}
+																					},
+																					_1: {
+																						ctor: '::',
+																						_0: {
+																							ctor: '::',
+																							_0: '0.5',
+																							_1: {
+																								ctor: '::',
+																								_0: 'tsp',
+																								_1: {
+																									ctor: '::',
+																									_0: 'salt',
+																									_1: {ctor: '[]'}
+																								}
+																							}
+																						},
+																						_1: {
+																							ctor: '::',
+																							_0: {
+																								ctor: '::',
+																								_0: 'olive oil',
+																								_1: {ctor: '[]'}
+																							},
+																							_1: {
+																								ctor: '::',
+																								_0: {
+																									ctor: '::',
+																									_0: '3',
+																									_1: {
+																										ctor: '::',
+																										_0: 'cloves',
+																										_1: {
+																											ctor: '::',
+																											_0: 'of garlic',
+																											_1: {ctor: '[]'}
+																										}
+																									}
+																								},
+																								_1: {
+																									ctor: '::',
+																									_0: {
+																										ctor: '::',
+																										_0: '0.5',
+																										_1: {
+																											ctor: '::',
+																											_0: 'tsp',
+																											_1: {
+																												ctor: '::',
+																												_0: 'crushed red chile pepper flakes',
+																												_1: {ctor: '[]'}
+																											}
+																										}
+																									},
+																									_1: {
+																										ctor: '::',
+																										_0: {
+																											ctor: '::',
+																											_0: '4',
+																											_1: {
+																												ctor: '::',
+																												_0: 'cloves',
+																												_1: {
+																													ctor: '::',
+																													_0: 'of garlic, crushed or chopped',
+																													_1: {ctor: '[]'}
+																												}
+																											}
+																										},
+																										_1: {
+																											ctor: '::',
+																											_0: {
+																												ctor: '::',
+																												_0: '1',
+																												_1: {
+																													ctor: '::',
+																													_0: '',
+																													_1: {
+																														ctor: '::',
+																														_0: 'small, finely chopped onion',
+																														_1: {ctor: '[]'}
+																													}
+																												}
+																											},
+																											_1: {
+																												ctor: '::',
+																												_0: {
+																													ctor: '::',
+																													_0: '2.5',
+																													_1: {
+																														ctor: '::',
+																														_0: 'dl',
+																														_1: {
+																															ctor: '::',
+																															_0: 'beefstock',
+																															_1: {ctor: '[]'}
+																														}
+																													}
+																												},
+																												_1: {
+																													ctor: '::',
+																													_0: {
+																														ctor: '::',
+																														_0: '1',
+																														_1: {
+																															ctor: '::',
+																															_0: 'kg',
+																															_1: {
+																																ctor: '::',
+																																_0: 'crushed tomatoes',
+																																_1: {ctor: '[]'}
+																															}
+																														}
+																													},
+																													_1: {
+																														ctor: '::',
+																														_0: {
+																															ctor: '::',
+																															_0: 'A handful chopped flat-leaf parsley',
+																															_1: {ctor: '[]'}
+																														},
+																														_1: {
+																															ctor: '::',
+																															_0: {
+																																ctor: '::',
+																																_0: '10',
+																																_1: {
+																																	ctor: '::',
+																																	_0: 'leaves',
+																																	_1: {
+																																		ctor: '::',
+																																		_0: 'fresh basil, torn or thinly sliced',
+																																		_1: {ctor: '[]'}
+																																	}
+																																}
+																															},
+																															_1: {ctor: '[]'}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								},
+								procedure: {
+									ctor: '::',
+									_0: 'Fill your largest pot with one and a half gallons of water along with three tablespoons of salt. Place it over high heat on the stove.',
+									_1: {
+										ctor: '::',
+										_0: 'Combine ground meat, bread crumbs, grated cheese, minced parsley and lightly beaten eggs (add eggs one at a time while stirring ingredients together). Sprinkle with minced garlic, two tablespoons of olive oil and seasonings. Then mix well until everything is combined.',
+										_1: {
+											ctor: '::',
+											_0: 'Form meat mixture into meatballs, using an ice cream scoop or your hands, pressing lightly, just enough so that meat holds together, but not so much that the meat is very compressed or the meatballs will be tough and dry.',
+											_1: {
+												ctor: '::',
+												_0: 'In a heavy skillet, heat olive oil over medium low heat. Add whole garlic cloves. Turn the garlic cloves to color them on all sides, then when lightly roasted, press them into the oil; as they brown, remove them.',
+												_1: {
+													ctor: '::',
+													_0: 'As soon as the oil is hot, add the meatballs to the skillet, leaving about 4 cm between them so that they can be easily turned. Turn them often using a spatula or large spoon so that they don\'t stick. Make sure there is enough oil in the pan (about 1 cm). You don\'t need extra virgin olive oil for this, any good quality Italian olive oil will do.',
+													_1: {
+														ctor: '::',
+														_0: 'When the meatballs are browned well on all sides, remove from the pan and drain on paper towels. Then add the next batch to the pan and continue until all are cooked.',
+														_1: {
+															ctor: '::',
+															_0: 'Add the pasta to the water now boiling in your pot and cook until al dente. This should take about 12 minutes.',
+															_1: {
+																ctor: '::',
+																_0: 'Add pepper flakes, garlic and finely chopped onion in the same oil you used to cook the meatballs. Sauté five to seven minutes, until onion bits are soft. Add beef stock, crushed tomatoes, and herbs. Bring to a simmer and cook for about 10 minutes.',
+																_1: {
+																	ctor: '::',
+																	_0: 'Toss hot, drained pasta with a few ladles of the sauce. Turn meatballs in remaining sauce.',
+																	_1: {
+																		ctor: '::',
+																		_0: 'Place pasta on dinner plates. Top with meatballs, sauce and extra grated cheese.',
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								},
+								tips: ''
+							},
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		}
+	}
+};
+var _user$project$Main$viewRating = function (rating) {
+	var stars = A2(
+		_elm_lang$core$List$map,
+		function (n) {
+			return (_elm_lang$core$Native_Utils.cmp(n, rating) < 0) ? A2(
+				_elm_lang$html$Html$span,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('glyphicon glyphicon-star'),
+					_1: {ctor: '[]'}
+				},
+				{ctor: '[]'}) : A2(
+				_elm_lang$html$Html$span,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('glyphicon glyphicon-star-empty'),
+					_1: {ctor: '[]'}
+				},
+				{ctor: '[]'});
+		},
+		{
+			ctor: '::',
+			_0: 1,
+			_1: {
+				ctor: '::',
+				_0: 2,
+				_1: {
+					ctor: '::',
+					_0: 3,
+					_1: {
+						ctor: '::',
+						_0: 4,
+						_1: {
+							ctor: '::',
+							_0: 5,
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		});
+	return A2(
+		_elm_lang$html$Html$p,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('recipe-rating'),
+			_1: {ctor: '[]'}
+		},
+		stars);
+};
+var _user$project$Main$viewRecipeCard = function (recipe) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('recipe recipe-card'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$a,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$href(
+						A2(_elm_lang$core$Basics_ops['++'], 'recipe.html?id=', recipe.id)),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$img,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$src(
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									'images/',
+									A2(_elm_lang$core$Basics_ops['++'], recipe.id, '.jpg'))),
+							_1: {ctor: '[]'}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('description'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$h2,
+									{ctor: '[]'},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(recipe.name),
+										_1: {ctor: '[]'}
+									}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$p,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('lead'),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text(recipe.lead),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: _user$project$Main$viewRating(recipe.rating),
+										_1: {ctor: '[]'}
+									}
+								}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Main$viewRecipeList = function (list) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$id('recipe-list'),
+			_1: {ctor: '[]'}
+		},
+		A2(_elm_lang$core$List$map, _user$project$Main$viewRecipeCard, list));
+};
+var _user$project$Main$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		if (_p0.ctor === 'NoOp') {
+			return model;
+		} else {
+			return _elm_lang$core$Native_Utils.update(
+				model,
+				{
+					filteredRecipes: A2(
+						_elm_lang$core$List$filter,
+						function (recipe) {
+							return A2(
+								_elm_lang$core$String$contains,
+								_elm_lang$core$String$toLower(_p0._0),
+								_elm_lang$core$String$toLower(recipe.name));
+						},
+						model.recipes)
+				});
+		}
+	});
+var _user$project$Main$init = {recipes: _user$project$Main$recipes, filteredRecipes: _user$project$Main$recipes};
+var _user$project$Main$Model = F2(
+	function (a, b) {
+		return {recipes: a, filteredRecipes: b};
+	});
+var _user$project$Main$Recipe = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return function (k) {
+											return {description: a, id: b, ingredients: c, lead: d, level: e, name: f, procedure: g, rating: h, servings: i, time: j, tips: k};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
+var _user$project$Main$FilterRecipes = function (a) {
+	return {ctor: 'FilterRecipes', _0: a};
+};
+var _user$project$Main$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$id('recipe-search'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$FilterRecipes),
+						_1: {ctor: '[]'}
+					}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$input,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$placeholder('search for recipes'),
+							_1: {ctor: '[]'}
+						},
+						{ctor: '[]'}),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: _user$project$Main$viewRecipeList(model.filteredRecipes),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _user$project$Main$main = _elm_lang$html$Html$beginnerProgram(
+	{model: _user$project$Main$init, update: _user$project$Main$update, view: _user$project$Main$view})();
+var _user$project$Main$NoOp = {ctor: 'NoOp'};

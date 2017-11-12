@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+
+  <title>Recipes</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/recipes.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-recipes">
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div id="recipe-search">
+          <input placeholder="search for recipes">
+        </div>
+        <div id="recipe-list">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="third-party/jquery-3.0.0.min.js"></script>
+<script src="third-pary/handlebars-v4.0.5.js"></script>
+<script src="recipe-data/recipes.js"></script>
+
+<script id="recipe-list-template" type="text/x-handlebars-template">
+    {{#each recipes}}
+<p>test</p>
+  </script>
+
+<script>
+  Handlebars.registerHelper("stars", (rating) => {
+    // we're going to implement this helper in step 2
+  });
+
+  for (let recipe of recipes) {
+    let $recipeCard = $("<div></div>").addClass("recipe recipe-card");
+
+    let $link = $("<a></a>").attr("href", `recipe.html?id=${recipe.id}`);
+    $recipeCard.append($link);
+
+    let $image = $("<img></img>").attr("src", `images/${recipe.id}.jpg`);
+    $link.append($image);
+
+    let $description = $("<div></div>").addClass("description");
+    $link.append($description);
+
+    let $heading = $("<h2></h2>").addClass("h2").text(recipe.name);
+    $description.append($heading);
+
+    let $lead = $("<p></p>").addClass("lead").text(recipe.lead);
+    $description.append($lead);
+
+    let $rating = $("<p></p>").addClass("recipe-rating");
+    $description.append($rating);
+
+    for (let i = 0; i < recipe.rating; i++) {
+      $rating.append($("<span></span>").addClass("glyphicon glyphicon-star"));
+    }
+    for (let i = recipe.rating; i < 5; i++) {
+      $rating.append($("<span></span>").addClass("glyphicon glyphicon-star-empty"));
+    }
+
+    $("#recipe-list").append($recipeCard);
+  }
+
+  /* Step 1. We're going to replace the above `for` loop full of jQuery
+   *         with the below four lines invoking Handlebars. Fill in the Handlebars
+   *         template #recipe-list-template above. After you're done, you can
+   *         remove all the jQuery code (and the `for` loop) above, otherwise
+   *         you'll get duplicated recipes.
+   *
+   *         Ignore the ratings stars for now. They're a bit special and will
+   *         require us to write a helper. We'll handle them in the next step.
+   */
+
+  let source = $("#recipe-list-template").html();
+  let template = Handlebars.compile(source);
+
+  let $recipeList = $("#recipe-list");
+  $recipeList.append($(template({ recipes })));
+
+    /* Step 2. We've put a `Handlebars.registerHelper` at the top of this script element.
+     *         Time to implement it. It should return a string with an HTML fragment.
+     *         Here is an example output, when the `rating` parameter is 4:
+     *
+     *           <p class="recipe-rating">
+     *             <span class="glyphicon glyphicon-star"></span>
+     *             <span class="glyphicon glyphicon-star"></span>
+     *             <span class="glyphicon glyphicon-star"></span>
+     *             <span class="glyphicon glyphicon-star"></span>
+     *             <span class="glyphicon glyphicon-star-empty"></span>
+     *           </p>
+     *
+     * Whitespace doesn't matter; the important thing is that it return the right amount
+     * of filled stars. (Hint: you might want to do things such as looping and
+     * incrementally build a string.)
+     *
+     * At this step, you can try out the helper by doing this in your console:
+     *
+     *      Handlebars.helpers.stars(2)
+     *
+     * Or even
+     *
+     *      $("#recipe-list").before( Handlebars.helpers.stars(2) )
+     *
+     */
+
+    /* Step 3. Now you should be able to put `{{#stars rating}}{{/stars}}` in your
+     *         template. Note that the important thing is that `Handlebars.registerHelper`
+     *         was called before `Handlebars.compile`, so that the helper exists when the
+     *         template tries to use it.
+     */
+</script>
+
+</html>

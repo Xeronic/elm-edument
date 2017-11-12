@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <title>Recipes</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/recipes.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-recipes">
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div id="recipe-search"><input placeholder="search for recipes"></div>
+          <div id="recipe-list">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="third-party/jquery-3.0.0.min.js"></script>
+  <script src="third-party/handlebars-v4.0.5.js"></script>
+
+  <script src="recipe-data/recipes.js"></script>
+
+  <script id="recipe-list-template" type="text/x-handlebars-template">
+    {{#each recipes}}
+      <div class="recipe recipe-card">
+        <a href="recipe.html?id={{id}}">
+          <img src="images/{{id}}.jpg">
+          <div class="description">
+            <h2>{{name}}</h2>
+            <p class="lead">{{lead}}</p>
+            <p class="recipe-rating">{{#stars rating}}{{/stars}}</p>
+          </div>
+        </a>
+      </div>
+    {{/each}}
+  </script>
+
+  <script>
+    Handlebars.registerHelper("stars", (rating) => {
+      let stars = [0, 1, 2, 3, 4, 5].map((i) => i <= rating
+        ? `<span class="glyphicon glyphicon-star"></span>`
+        : `<span class="glyphicon glyphicon-star-empty"></span>`);
+      return `<p class="recipe-rating">${stars.join("")}</p>`;
+    });
+
+    let source = $("#recipe-list-template").html();
+    let template = Handlebars.compile(source);
+
+    let $recipeList = $("#recipe-list");
+    function renderRecipeList(recipes) {
+        $recipeList.empty().append($(template({ recipes })));
+    }
+
+    let $searchInput = $("#recipe-search input");
+    function render() {
+      let searchText = $searchInput.val().toLowerCase();
+      let filteredRecipes = recipes.filter((recipe) => 
+        [recipe.name, recipe.lead, recipe.description].some((s) =>
+          s.toLowerCase().includes(searchText)));
+      renderRecipeList(filteredRecipes);
+    }
+
+    render();
+    $searchInput.on("keyup", render);
+  </script>
+</html>

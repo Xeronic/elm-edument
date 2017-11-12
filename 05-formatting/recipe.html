@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <title>Recipes</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/icheck-blue.css" rel="stylesheet">
+    <link href="css/recipes.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-recipes">
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div id="recipe-search"><input placeholder="search for recipes"></div>
+          <div id="recipe-list"></div>
+          <div id="recipe"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="third-party/jquery-3.0.0.min.js"></script>
+  <script src="third-party/icheck.js"></script>
+  <script src="third-party/handlebars-v4.0.5.js"></script>
+  <script src="third-party/markdown.min.js"></script>
+  <script src="recipe-data/recipes.js"></script>
+
+  <script id="recipe-list-template" type="text/x-handlebars-template">
+    {{#each recipes}}
+      <div class="recipe recipe-card">
+        <a href="recipe.html?id={{id}}">
+          <img src="images/{{id}}.jpg">
+          <div class="description">
+            <h2>{{name}}</h2>
+            <p class="lead">{{lead}}</p>
+            {{#stars rating}}{{/stars}}
+          </div>
+        </a>
+      </div>
+    {{/each}}
+  </script>
+
+  <script id="recipe-not-found-template" type="text/x-handlebars-template">
+    <div class="recipe">
+      {{#unitSelector}}{{/unitSelector}}
+
+      <div class="row">
+        <div class="col-md-12">
+          <center class="lead apology">Sorry; recipe not found.</center>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script id="recipe-template" type="text/x-handlebars-template">
+    <div class="recipe">
+      {{#unitSelector}}{{/unitSelector}}
+
+      <div class="row">
+        <div class="col-md-12">
+          <img src="images/{{id}}.jpg">
+          <div class="description">
+            <h2>{{name}}</h2>
+            <p class="lead">{{lead}}</p>
+            {{#stars rating}}{{/stars}}
+            <div>
+                Servings:
+                  <span id="decrement-servings" class="change-servings glyphicon glyphicon-minus"></span>
+                  {{servings}}
+                  <span id="increment-servings" class="change-servings glyphicon glyphicon-plus"></span>
+                  <br>
+                Time: {{time}}<br>
+                Level: {{level}}
+            </div>
+            <h3>Description</h3>
+            {{#markdownToHTML description}}{{/markdownToHTML}}
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5">
+          <div class="recipe-ingredients">
+            <h3>Ingredients</h3>
+            <ul>
+              {{#each ingredients}}
+                <li>{{#ingredient this}}{{/ingredient}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="recipe-procedure">
+            <h3>Procedure</h3>
+            <ol>
+              {{#each procedure}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      {{#if tips}}
+        <div class="row">
+          <div class="col-md-12">
+            <div class="description">
+              <h3>Tips and variations</h3>
+              {{#markdownToHTML tips}}{{/markdownToHTML}}
+            </div>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </script>
+
+  <script>
+    Handlebars.registerHelper("unitSelector", () => {
+        return `
+          <div class="units">
+            Show measurements as
+            <input id="unit-metric" type="radio" name="unit" value="metric" checked>
+            <label for="unit-metric">Metric units</label>
+            <input id="unit-us" type="radio" name="unit" value="us">
+            <label for="unit-us">US units</label>
+          </div>
+        `;
+    });
+
+    Handlebars.registerHelper("stars", (rating) => {
+        let stars = "";
+        for (let i = 0; i < 5; i++) {
+            stars += i <= rating
+                ? `<span class="glyphicon glyphicon-star"></span>`
+                : `<span class="glyphicon glyphicon-star-empty"></span>`;
+        }
+        return `<p class="recipe-rating">${stars}</p>`;
+    });
+
+    let scalingFactor = 1;
+
+    function roundTo(value, granularity) {
+        let strGranularity = String(granularity);
+        let decimals = strGranularity.includes(".")
+            ? strGranularity.length - strGranularity.indexOf(".") - 1
+            : 0;
+        return (Math.round(value / granularity) * granularity).toFixed(decimals)
+            .replace(/\.0+$/, "")
+            .replace(/(?<=\.[^0]+)0+$/, "");
+    }
+
+    function c2f(celsius) {
+        return roundTo(celsius * 9/5 + 32, 25);
+    }
+
+    let conversionRates = {
+        // weight
+        "g": [1, "g"],
+        "oz.": [28.3, "g"],
+        "lb": [453.6, "g"],
+        "kg": [1000, "g"],
+
+        // volume
+        "ml": [1, "ml"],
+        "tsp": [5, "ml"],
+        "tbsp": [15, "ml"],
+        "fl. oz.": [29.6, "ml"],
+        "dl": [100, "ml"],
+        "cup": [236.6, "ml"],
+        "pint": [473, "ml"],
+        "quart": [946, "ml"],
+        "l": [1000, "ml"],
+        "gallon": [3785, "ml"],
+
+        // length
+        "cm": [1, "cm"],
+        "inch": [2.54, "cm"],
+        "dm": [10, "cm"],
+        "foot": [30.48, "cm"],
+        "m": [100, "cm"],
+    };
+
+    let unitChoice = {
+        "g to metric": [
+            [1000, "g", 10],
+            [Infinity, "kg", 0.25],
+        ],
+        "g to us": [
+            [227, "oz.", 0.25],
+            [Infinity, "lb", 0.1],
+        ],
+        "ml to metric": [
+            [10, "tsp", 0.5],
+            [50, "tbsp", 0.25],
+            [1000, "dl", 0.25],
+            [Infinity, "l", 0.1],
+        ],
+        "ml to us": [
+            [10, "tsp", 0.5],
+            [29.6, "tbsp", 0.25],
+            [118, "cup", 0.25, "cups"],
+            [355, "pint", 0.25, "pints"],
+            [710, "quart", 0.25, "quarts"],
+            [Infinity, "gallon", 0.25, "gallons"],
+        ],
+        "cm to metric": [
+            [1, "mm", 1],
+            [10, "cm", 0.5],
+            [100, "dm", 0.25],
+            [Infinity, "m", 0.1],
+        ],
+        "cm to us": [
+            [30, "inch", 0.5, "inches"],
+            [Infinity, "foot", 0.25, "feet"],
+        ],
+    };
+
+    function convertUnits(amount, unit) {
+        if (unit === "°C") {
+            return unitSystem === "metric"
+                ? `${amount} °C`
+                : `${roundTo(c2f(amount), 5)} °F`;
+        }
+
+        if (!conversionRates[unit]) {
+            let singular = unit.replace(/s$/, ""),
+                plural = `${singular}s`;
+
+            return amount === 1
+                ? `1 ${singular}`
+                : `${roundTo(amount, 0.25)} ${plural}`;
+        }
+
+        let [conversionFactor, baseUnit] = conversionRates[unit];
+        let convertedAmount = amount * conversionFactor;
+        let cases = unitChoice[`${baseUnit} to ${unitSystem}`];
+        for (let [cutoff, targetUnit, granularity, targetPlural] of cases) {
+            if (convertedAmount < cutoff) {
+                let [backConversionFactor] = conversionRates[targetUnit];
+                let targetAmount = roundTo(convertedAmount / backConversionFactor, granularity);
+                return targetAmount === "1"
+                    ? `${targetAmount} ${targetUnit}`
+                    : `${targetAmount} ${targetPlural || targetUnit}`;
+            }
+        }
+    }
+
+    Handlebars.registerHelper("ingredient", (ingredient) => {
+        if (typeof ingredient === "string") {
+            return ingredient;
+        }
+        let [qty, unit, desc] = ingredient;
+        qty *= scalingFactor;
+
+        return unit === null
+            ? `${roundTo(qty, 0.25)} ${desc}`
+            : `${convertUnits(qty, unit)} ${desc}`;
+    });
+
+    Handlebars.registerHelper("markdownToHTML", (markdownInput) => {
+        return markdown.toHTML(markdownInput);
+    });
+
+    let recipeListSource = $("#recipe-list-template").html();
+    let recipeListTemplate = Handlebars.compile(recipeListSource);
+
+    function renderRecipeList(recipes) {
+        let $recipeList = $("#recipe-list");
+        $recipeList.empty().append($(recipeListTemplate({ recipes })));
+    }
+
+    let match = location.search.match(/id=([^&]*)/);
+    let id = match
+        ? match[1]
+        : null;
+    let recipe = recipes.find((r) => r.id === id);
+
+    let recipeSource = recipe
+        ? $("#recipe-template").html()
+        : $("#recipe-not-found-template").html();
+    let recipeTemplate = Handlebars.compile(recipeSource);
+
+    let $recipe = $("#recipe");
+
+    function renderRecipe(recipe) {
+        $recipe.empty().append($(recipeTemplate(recipe)));
+
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_minimal-blue',
+            radioClass: 'iradio_minimal-blue',
+            increaseArea: '20%'
+        });
+    }
+
+    renderRecipe(recipe);
+
+    let $searchInput = $("#recipe-search input");
+    function render() {
+        let searchText = $searchInput.val().toLowerCase();
+        let filteredRecipes = searchText === ""
+            ? []
+            : recipes.filter((recipe) =>
+                recipe.name.toLowerCase().includes(searchText) ||
+                recipe.lead.toLowerCase().includes(searchText) ||
+                recipe.description.toLowerCase().includes(searchText)
+            );
+        $recipe.toggle(searchText === "");
+        renderRecipeList(filteredRecipes);
+    }
+
+    $searchInput.on("keyup", render);
+    render();
+
+    let originalServings = recipe.servings;
+
+    $("#recipe").on("click", "#decrement-servings", () => {
+        if (recipe.servings <= 1) {
+            return;
+        }
+        recipe.servings--;
+        scalingFactor = recipe.servings / originalServings;
+        renderRecipe(recipe);
+    });
+    
+    $("#recipe").on("click", "#increment-servings", () => {
+        recipe.servings++;
+        scalingFactor = recipe.servings / originalServings;
+        renderRecipe(recipe);
+    });
+  </script>
+</html>

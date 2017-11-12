@@ -1,0 +1,121 @@
+body {
+  background: #eee;
+  overflow-y: scroll;
+}
+
+.navbar-recipes {
+  background: #999;
+  min-height: 3em;
+  margin-bottom: 2em;
+  border: none;
+  border-radius: 0;
+}
+
+#recipe-search {
+  text-align: center;
+}
+
+#recipe-search > input {
+  border: solid 1px #ccc;
+  border-radius: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 2em;
+  width: 400px;
+}
+
+#recipe-search > input:focus {
+  outline: none;
+}
+
+.recipe {
+  background: white;
+  box-shadow: 0px 0px 10px 0px #ccc;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  min-height: 300px;
+}
+
+.recipe-card > a {
+  color: black;
+}
+
+.recipe-card > a:hover {
+  text-decoration: none;
+}
+
+.recipe-card:hover {
+  background: #ddd;
+}
+
+.recipe img {
+  float: right;
+  padding-left: 1em;
+}
+
+.recipe .description {
+  padding-top: 1ex;
+  padding-bottom: 1ex;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.recipe-card .description {
+  padding-top: 1ex;
+  padding-left: 2em;
+  position: relative;
+  height: 250px;
+}
+
+.recipe h2 {
+  font-weight: bold;
+}
+
+.recipe-rating {
+  font-size: 200%;
+  color: #ea2;
+}
+
+.recipe-card .recipe-rating {
+  margin-bottom: 0;
+  position: absolute;
+  bottom: -1em;
+  left: 1em;
+}
+
+.recipe-ingredients {
+  padding: 1ex 2em 1ex;
+}
+
+.recipe-procedure {
+  background: #f8f8f8;
+  padding: 1ex 2em 1ex;
+  margin-right: 2em;
+}
+
+.units {
+  background: white;
+  padding-top: 1ex;
+  padding-bottom: 0.5ex;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-bottom: solid 1px #ddd;
+  margin-top: 2em;
+}
+
+.units input {
+  margin-left: 1em;
+}
+
+.units label {
+  font-weight: normal;
+}
+
+.apology {
+  margin-top: 110px;
+  font-style: italic;
+}
+
+.iradio_minimal-blue {
+  margin-left: 1em;
+}
